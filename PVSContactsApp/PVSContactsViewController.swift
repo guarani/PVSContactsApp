@@ -12,9 +12,16 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
 
     @IBOutlet weak var tableView: UITableView!
     var contactList = [[String: AnyObject]]()
+    var selectedContact: PVSDictionary!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Contacts"
+        
+        let menuImage = UIImage(named: "ham")?.imageWithRenderingMode(.AlwaysTemplate)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: menuImage, style: .Plain, target: self, action: "menuButtonAction:")
+        self.navigationItem.leftBarButtonItem?.tintColor = PVSConstants.Colors.Active
         
         // Remove empty cells.
         tableView.tableFooterView = UIView()
@@ -29,12 +36,17 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
         
     }
     
+
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
 
-    
+    func menuButtonAction(sender: UIBarButtonItem) {
+        let menuViewController = navigationController?.parentViewController as? PVSMenuViewController
+        menuViewController?.toggleMenu()
+    }
 
 
     
@@ -50,31 +62,48 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
         let contact = contactList[indexPath.row]
         
         let photoURL = NSURL(string: contact["imageUrl"] as! String)!
-        cell.photoImageView.image = UIImage(data: NSData(contentsOfURL: photoURL)!)
+        
+        NSURLSession.sharedSession().dataTaskWithURL(photoURL, completionHandler: { data, response, error in
+            if data != nil {
+                let image = UIImage(data: data!)
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let theCell = tableView.cellForRowAtIndexPath(indexPath) as? PVSContactTableViewCell {
+                        theCell.photoImageView.image = image
+                    }
+                })
+            }
+        }).resume()
+        
+        
+        
+        
         cell.nameLabel?.text = contact["name"] as? String
         let companyDetails = contact["companyDetails"] as! PVSDictionary
         cell.companyNameLabel?.text = companyDetails["name"] as? String
+        cell.accessoryType = .DisclosureIndicator
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150
+        return 70
     }
     
     // MARK: - Table View Delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        selectedContact = contactList[indexPath.row]
+        performSegueWithIdentifier("PVSContactsToContactDetailsSegue", sender: self)
     }
     
-    /*
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "PVSContactsToContactDetailsSegue" {
+            let contactDetailsViewController = segue.destinationViewController as! PVSContactDetailViewController
+            contactDetailsViewController.selectedContact = self.selectedContact
+            
+        }
     }
-    */
 
 }

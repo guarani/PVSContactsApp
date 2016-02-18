@@ -22,6 +22,13 @@
 		32DCE5A11C754F9700F1F055 /* PVSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */; };
 		32DCE5A31C7559F200F1F055 /* PVSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A21C7559F200F1F055 /* PVSTextField.swift */; };
 		32DCE5A51C755C0D00F1F055 /* PVSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */; };
+		32DCE5A71C755F0900F1F055 /* PVSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A61C755F0900F1F055 /* PVSMenuViewController.swift */; };
+		32DCE5AB1C75694000F1F055 /* PVSContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5AA1C75694000F1F055 /* PVSContactDetailViewController.swift */; };
+		32DCE5B21C75719B00F1F055 /* PVSSectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5B11C75719B00F1F055 /* PVSSectionLabel.swift */; };
+		32DCE5B51C7571FB00F1F055 /* PVSSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5B31C7571FB00F1F055 /* PVSSummaryTableViewCell.swift */; };
+		32DCE5B61C7571FB00F1F055 /* PVSSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE5B41C7571FB00F1F055 /* PVSSummaryTableViewCell.xib */; };
+		32DCE5BB1C7574EE00F1F055 /* PVSCommunicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5B91C7574EE00F1F055 /* PVSCommunicationTableViewCell.swift */; };
+		32DCE5BC1C7574EE00F1F055 /* PVSCommunicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE5BA1C7574EE00F1F055 /* PVSCommunicationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,13 @@
 		32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSLoginViewController.swift; sourceTree = "<group>"; };
 		32DCE5A21C7559F200F1F055 /* PVSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSTextField.swift; sourceTree = "<group>"; };
 		32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSBaseViewController.swift; sourceTree = "<group>"; };
+		32DCE5A61C755F0900F1F055 /* PVSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSMenuViewController.swift; sourceTree = "<group>"; };
+		32DCE5AA1C75694000F1F055 /* PVSContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSContactDetailViewController.swift; sourceTree = "<group>"; };
+		32DCE5B11C75719B00F1F055 /* PVSSectionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSSectionLabel.swift; sourceTree = "<group>"; };
+		32DCE5B31C7571FB00F1F055 /* PVSSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		32DCE5B41C7571FB00F1F055 /* PVSSummaryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		32DCE5B91C7574EE00F1F055 /* PVSCommunicationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSCommunicationTableViewCell.swift; sourceTree = "<group>"; };
+		32DCE5BA1C7574EE00F1F055 /* PVSCommunicationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSCommunicationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +127,13 @@
 		32DCE5651C75454300F1F055 /* PVSContactsApp */ = {
 			isa = PBXGroup;
 			children = (
+				32DCE5AC1C756AE700F1F055 /* Contact_Details */,
 				32DCE5661C75454300F1F055 /* AppDelegate.swift */,
 				32DCE56A1C75454300F1F055 /* Main.storyboard */,
 				32DCE5961C75477700F1F055 /* PVSComm.swift */,
 				32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */,
 				32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */,
+				32DCE5A61C755F0900F1F055 /* PVSMenuViewController.swift */,
 				32DCE5941C7545DC00F1F055 /* PVSContactsViewController.swift */,
 				32DCE56D1C75454300F1F055 /* Assets.xcassets */,
 				32DCE56F1C75454300F1F055 /* LaunchScreen.storyboard */,
@@ -127,6 +143,7 @@
 				32DCE59B1C754A2C00F1F055 /* PVSContactTableViewCell.xib */,
 				32DCE59E1C754E9200F1F055 /* PVSConstants.swift */,
 				32DCE5A21C7559F200F1F055 /* PVSTextField.swift */,
+				32DCE5B11C75719B00F1F055 /* PVSSectionLabel.swift */,
 			);
 			path = PVSContactsApp;
 			sourceTree = "<group>";
@@ -147,6 +164,18 @@
 				32DCE5881C75454300F1F055 /* Info.plist */,
 			);
 			path = PVSContactsAppUITests;
+			sourceTree = "<group>";
+		};
+		32DCE5AC1C756AE700F1F055 /* Contact_Details */ = {
+			isa = PBXGroup;
+			children = (
+				32DCE5AA1C75694000F1F055 /* PVSContactDetailViewController.swift */,
+				32DCE5B31C7571FB00F1F055 /* PVSSummaryTableViewCell.swift */,
+				32DCE5B41C7571FB00F1F055 /* PVSSummaryTableViewCell.xib */,
+				32DCE5B91C7574EE00F1F055 /* PVSCommunicationTableViewCell.swift */,
+				32DCE5BA1C7574EE00F1F055 /* PVSCommunicationTableViewCell.xib */,
+			);
+			path = Contact_Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +282,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DCE5BC1C7574EE00F1F055 /* PVSCommunicationTableViewCell.xib in Resources */,
 				32DCE59D1C754A2C00F1F055 /* PVSContactTableViewCell.xib in Resources */,
+				32DCE5B61C7571FB00F1F055 /* PVSSummaryTableViewCell.xib in Resources */,
 				32DCE5711C75454300F1F055 /* LaunchScreen.storyboard in Resources */,
 				32DCE56E1C75454300F1F055 /* Assets.xcassets in Resources */,
 				32DCE56C1C75454300F1F055 /* Main.storyboard in Resources */,
@@ -282,12 +313,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DCE5971C75477700F1F055 /* PVSComm.swift in Sources */,
+				32DCE5B51C7571FB00F1F055 /* PVSSummaryTableViewCell.swift in Sources */,
+				32DCE5AB1C75694000F1F055 /* PVSContactDetailViewController.swift in Sources */,
+				32DCE5B21C75719B00F1F055 /* PVSSectionLabel.swift in Sources */,
 				32DCE59C1C754A2C00F1F055 /* PVSContactTableViewCell.swift in Sources */,
 				32DCE5A51C755C0D00F1F055 /* PVSBaseViewController.swift in Sources */,
 				32DCE5671C75454300F1F055 /* AppDelegate.swift in Sources */,
 				32DCE59F1C754E9200F1F055 /* PVSConstants.swift in Sources */,
 				32DCE5A11C754F9700F1F055 /* PVSLoginViewController.swift in Sources */,
 				32DCE5951C7545DC00F1F055 /* PVSContactsViewController.swift in Sources */,
+				32DCE5BB1C7574EE00F1F055 /* PVSCommunicationTableViewCell.swift in Sources */,
+				32DCE5A71C755F0900F1F055 /* PVSMenuViewController.swift in Sources */,
 				32DCE5991C75479F00F1F055 /* Utils.swift in Sources */,
 				32DCE5A31C7559F200F1F055 /* PVSTextField.swift in Sources */,
 			);

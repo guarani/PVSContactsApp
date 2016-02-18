@@ -32,7 +32,7 @@ class PVSLoginViewController: PVSBaseViewController {
         passTextField.leftViewMode = .Always
         
         loginButton.backgroundColor = PVSConstants.Colors.Active
-        loginButton.titleLabel?.textColor = PVSConstants.Colors.LightText
+        loginButton.setTitleColor(PVSConstants.Colors.LightText, forState: .Normal)
         loginButton.layer.cornerRadius = 5
         loginButton.layer.masksToBounds = true
     }
@@ -47,15 +47,18 @@ class PVSLoginViewController: PVSBaseViewController {
     }
     
     @IBAction func loginButtonAction(sender: AnyObject) {
-//        if emailTextField.text?.isEmpty == true {
-//            
-//        } else if passTextField.text?.isEmpty == true {
-//            
-//        } else {
+        
+        if emailTextField.text?.isEmpty == true {
+            Utils.showMessage("Please enter email.", inViewController: self)
+            return
+        } else if passTextField.text?.isEmpty == true {
+            Utils.showMessage("Please enter password.", inViewController: self)
+            return
+        } else {
             self.passTextField.text = nil
             self.view.endEditing(true)
             self.performSegueWithIdentifier("PVSLoginToContactsSegue", sender: self)
-//        }
+        }
     }
 
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="PVSSummaryTableViewCell" customModule="PVSContactsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zN-yU-rgF">
+                        <rect key="frame" x="20" y="15" width="335" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6Z1-DN-7Nh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAf-zs-bJI">
+                        <rect key="frame" x="20" y="47" width="335" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="pAf-zs-bJI" secondAttribute="trailing" constant="12" id="GpS-Wm-Nbn"/>
+                    <constraint firstItem="pAf-zs-bJI" firstAttribute="top" secondItem="1zN-yU-rgF" secondAttribute="bottom" constant="11" id="Kha-9w-laj"/>
+                    <constraint firstItem="pAf-zs-bJI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="cVa-Qz-cN8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pAf-zs-bJI" secondAttribute="bottom" constant="11" id="fLF-u3-XVC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1zN-yU-rgF" secondAttribute="trailing" constant="12" id="kGF-Yk-JWZ"/>
+                    <constraint firstItem="1zN-yU-rgF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="lGu-P1-bJo"/>
+                    <constraint firstItem="1zN-yU-rgF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="yVj-oh-KDh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="1zN-yU-rgF" id="ZKO-on-Hak"/>
+                <outlet property="positionLabel" destination="pAf-zs-bJI" id="bOW-U7-QhK"/>
+            </connections>
+            <point key="canvasLocation" x="741.5" y="581.5"/>
+        </tableViewCell>
+    </objects>
+</document>
