@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		32DCE5671C75454300F1F055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5661C75454300F1F055 /* AppDelegate.swift */; };
-		32DCE5691C75454300F1F055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5681C75454300F1F055 /* ViewController.swift */; };
 		32DCE56C1C75454300F1F055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE56A1C75454300F1F055 /* Main.storyboard */; };
 		32DCE56E1C75454300F1F055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE56D1C75454300F1F055 /* Assets.xcassets */; };
 		32DCE5711C75454300F1F055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE56F1C75454300F1F055 /* LaunchScreen.storyboard */; };
 		32DCE57C1C75454300F1F055 /* PVSContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE57B1C75454300F1F055 /* PVSContactsAppTests.swift */; };
 		32DCE5871C75454300F1F055 /* PVSContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5861C75454300F1F055 /* PVSContactsAppUITests.swift */; };
+		32DCE5951C7545DC00F1F055 /* PVSContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5941C7545DC00F1F055 /* PVSContactsViewController.swift */; };
+		32DCE5971C75477700F1F055 /* PVSComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5961C75477700F1F055 /* PVSComm.swift */; };
+		32DCE5991C75479F00F1F055 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5981C75479F00F1F055 /* Utils.swift */; };
+		32DCE59C1C754A2C00F1F055 /* PVSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE59A1C754A2C00F1F055 /* PVSContactTableViewCell.swift */; };
+		32DCE59D1C754A2C00F1F055 /* PVSContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DCE59B1C754A2C00F1F055 /* PVSContactTableViewCell.xib */; };
+		32DCE59F1C754E9200F1F055 /* PVSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE59E1C754E9200F1F055 /* PVSConstants.swift */; };
+		32DCE5A11C754F9700F1F055 /* PVSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */; };
+		32DCE5A31C7559F200F1F055 /* PVSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A21C7559F200F1F055 /* PVSTextField.swift */; };
+		32DCE5A51C755C0D00F1F055 /* PVSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +44,6 @@
 /* Begin PBXFileReference section */
 		32DCE5631C75454300F1F055 /* PVSContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DCE5661C75454300F1F055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32DCE5681C75454300F1F055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32DCE56B1C75454300F1F055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32DCE56D1C75454300F1F055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DCE5701C75454300F1F055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,15 @@
 		32DCE5821C75454300F1F055 /* PVSContactsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PVSContactsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DCE5861C75454300F1F055 /* PVSContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVSContactsAppUITests.swift; sourceTree = "<group>"; };
 		32DCE5881C75454300F1F055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DCE5941C7545DC00F1F055 /* PVSContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSContactsViewController.swift; sourceTree = "<group>"; };
+		32DCE5961C75477700F1F055 /* PVSComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSComm.swift; sourceTree = "<group>"; };
+		32DCE5981C75479F00F1F055 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		32DCE59A1C754A2C00F1F055 /* PVSContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSContactTableViewCell.swift; sourceTree = "<group>"; };
+		32DCE59B1C754A2C00F1F055 /* PVSContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSContactTableViewCell.xib; sourceTree = "<group>"; };
+		32DCE59E1C754E9200F1F055 /* PVSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSConstants.swift; sourceTree = "<group>"; };
+		32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSLoginViewController.swift; sourceTree = "<group>"; };
+		32DCE5A21C7559F200F1F055 /* PVSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSTextField.swift; sourceTree = "<group>"; };
+		32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVSBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				32DCE5661C75454300F1F055 /* AppDelegate.swift */,
-				32DCE5681C75454300F1F055 /* ViewController.swift */,
 				32DCE56A1C75454300F1F055 /* Main.storyboard */,
+				32DCE5961C75477700F1F055 /* PVSComm.swift */,
+				32DCE5A41C755C0D00F1F055 /* PVSBaseViewController.swift */,
+				32DCE5A01C754F9700F1F055 /* PVSLoginViewController.swift */,
+				32DCE5941C7545DC00F1F055 /* PVSContactsViewController.swift */,
 				32DCE56D1C75454300F1F055 /* Assets.xcassets */,
 				32DCE56F1C75454300F1F055 /* LaunchScreen.storyboard */,
 				32DCE5721C75454300F1F055 /* Info.plist */,
+				32DCE5981C75479F00F1F055 /* Utils.swift */,
+				32DCE59A1C754A2C00F1F055 /* PVSContactTableViewCell.swift */,
+				32DCE59B1C754A2C00F1F055 /* PVSContactTableViewCell.xib */,
+				32DCE59E1C754E9200F1F055 /* PVSConstants.swift */,
+				32DCE5A21C7559F200F1F055 /* PVSTextField.swift */,
 			);
 			path = PVSContactsApp;
 			sourceTree = "<group>";
@@ -229,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DCE59D1C754A2C00F1F055 /* PVSContactTableViewCell.xib in Resources */,
 				32DCE5711C75454300F1F055 /* LaunchScreen.storyboard in Resources */,
 				32DCE56E1C75454300F1F055 /* Assets.xcassets in Resources */,
 				32DCE56C1C75454300F1F055 /* Main.storyboard in Resources */,
@@ -256,8 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DCE5691C75454300F1F055 /* ViewController.swift in Sources */,
+				32DCE5971C75477700F1F055 /* PVSComm.swift in Sources */,
+				32DCE59C1C754A2C00F1F055 /* PVSContactTableViewCell.swift in Sources */,
+				32DCE5A51C755C0D00F1F055 /* PVSBaseViewController.swift in Sources */,
 				32DCE5671C75454300F1F055 /* AppDelegate.swift in Sources */,
+				32DCE59F1C754E9200F1F055 /* PVSConstants.swift in Sources */,
+				32DCE5A11C754F9700F1F055 /* PVSLoginViewController.swift in Sources */,
+				32DCE5951C7545DC00F1F055 /* PVSContactsViewController.swift in Sources */,
+				32DCE5991C75479F00F1F055 /* Utils.swift in Sources */,
+				32DCE5A31C7559F200F1F055 /* PVSTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
