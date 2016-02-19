@@ -49,10 +49,10 @@ class PVSLoginViewController: PVSBaseViewController {
     @IBAction func loginButtonAction(sender: AnyObject) {
         
         if emailTextField.text?.isEmpty == true {
-            Utils.showMessage("Please enter email.", inViewController: self)
+            Utils.showMessage("Please enter your email", inViewController: self)
             return
         } else if passTextField.text?.isEmpty == true {
-            Utils.showMessage("Please enter password.", inViewController: self)
+            Utils.showMessage("Please enter your password", inViewController: self)
             return
         } else {
             self.passTextField.text = nil

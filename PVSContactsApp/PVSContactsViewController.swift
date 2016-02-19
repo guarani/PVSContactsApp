@@ -8,11 +8,13 @@
 
 import UIKit
 
-class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, UITableViewDelegate {
+class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var tableView: UITableView!
     var contactList = [[String: AnyObject]]()
+    var filteredContactList = [[String: AnyObject]]()
     var selectedContact: PVSDictionary!
+    var searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,15 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
         self.title = "Contacts"
         
         let menuImage = UIImage(named: "ham")?.imageWithRenderingMode(.AlwaysTemplate)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: menuImage, style: .Plain, target: self, action: "menuButtonAction:")
-        self.navigationItem.leftBarButtonItem?.tintColor = PVSConstants.Colors.Active
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: menuImage, style: .Plain, target: self, action: "menuButtonAction:")
+        navigationItem.leftBarButtonItem?.tintColor = PVSConstants.Colors.Active
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+
         
         // Remove empty cells.
         tableView.tableFooterView = UIView()
@@ -36,10 +45,29 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
         
     }
     
+    // MARK: UISearchControllerDelegate
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        guard let query = searchController.searchBar.text where query.isEmpty == false else {
+            filteredContactList = contactList
+            tableView.reloadData()
+            return
+        }
+        // Search ignoring diacritic differences.
+        let predicate = NSPredicate(format: "(name contains[cd] %@) OR (companyDetails.name contains[cd] %@)", query, query)
+        filteredContactList = contactList.filter { predicate.evaluateWithObject($0) }
+        tableView.reloadData()
+    }
+    
 
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    func searchAction(sender: UIBarButtonItem) {
+        
     }
 
 
@@ -54,12 +82,21 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
     // MARK: - Table View Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactList.count
+        if searchController.active {
+           return filteredContactList.count
+        } else {
+            return contactList.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PVSContactTableViewCellReuseID") as! PVSContactTableViewCell
-        let contact = contactList[indexPath.row]
+        let contact: PVSDictionary!
+        if searchController.active {
+            contact = filteredContactList[indexPath.row]
+        } else {
+            contact = contactList[indexPath.row]
+        }
         
         let photoURL = NSURL(string: contact["imageUrl"] as! String)!
         
@@ -92,7 +129,12 @@ class PVSContactsViewController: PVSBaseViewController, UITableViewDataSource, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        selectedContact = contactList[indexPath.row]
+        if searchController.active {
+            selectedContact = filteredContactList[indexPath.row]
+        } else {
+            selectedContact = contactList[indexPath.row]
+        }
+        
         performSegueWithIdentifier("PVSContactsToContactDetailsSegue", sender: self)
     }
     
